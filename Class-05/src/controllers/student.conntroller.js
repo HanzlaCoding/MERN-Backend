@@ -50,8 +50,20 @@ const updateRecord = async (req, res) => {
     })
 }
 
+const deleteStudent = async (req, res) => {
+    const { id } = req.params;
+
+    await StudentModel.findOneAndDelete({ _id: id })
+
+    return res.status(200).json({
+        success: true,
+        message: 'Student record deleted successfully!',
+    })
+}
+
+
 module.exports = {
     createStudentRecord,
     getRecords,
-    updateRecord
+    updateRecord, deleteStudent
 }
