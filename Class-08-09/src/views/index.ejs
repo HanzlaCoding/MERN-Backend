@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EJS Start</title>
+</head>
+<body>
+    <h1>Salam, <%= name %>!</h1>
+    
+    <h3>Aapki Shopping List:</h3>
+    <ul>
+        <!-- Map in items -->
+        <% items.map((item)=>{%>
+         <li><%= item%></li>
+        <%})%>
+    </ul>
+</body>
+</html>

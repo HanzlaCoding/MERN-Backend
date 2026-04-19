@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Tracker</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .out-of-stock {
+            background-color: #ffcccc; /* Red color for zero stock */
+            color: #b30000;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Smart Inventory Tracker</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price (Rs)</th>
+                <th>Stock</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+    <% let grandTotal = 0; %> 
+    <% products.map((item) => { %>
+        <% grandTotal += (item.price * item.stock); %> 
+        <tr class="<%= item.stock === 0 ? 'out-of-stock' : '' %>">
+            <td><%= item.name %></td>
+            <td><%= item.price %></td>
+            <td><%= item.stock %></td>
+            <td><%= item.price * item.stock %></td>
+        </tr>
+    <% }) %>
+</tbody>
+
+<h3>Grand Total: Rs <%= grandTotal %></h3>
+    </table>
+
+</body>
+</html>

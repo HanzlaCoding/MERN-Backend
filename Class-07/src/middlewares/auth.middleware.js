@@ -10,10 +10,8 @@ const authMiddleware = (req, res, next) => {
 
     const decoded = jwt.verify(token, _config.JWT_SECRET)
 
-    console.log(decoded);
-
-
+    req.user = decoded;
+    next();
 }
-
 
 module.exports = authMiddleware;

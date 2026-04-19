@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('head') %>
+    <title>Profile | Curator Studio</title>
+</head>
+<body>
+    
+    <nav>
+        <h1>@<%= user.username %></h1>
+        <a href="/api/auth/logout">Logout</a>
+    </nav>
+
+    <main>
+        
+        <div>
+            <div>
+                <%= user.username.substring(0, 2) %>
+            </div>
+            
+            <div>
+                <div>
+                    <span><span>248</span> <span>Posts</span></span>
+                    <span><span>12k</span> <span>Followers</span></span>
+                    <span><span>412</span> <span>Following</span></span>
+                </div>
+                <h2><%= user.username %></h2>
+                <p>Email: <%= user.email %></p>
+            </div>
+        </div>
+
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+    </main>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/api/auth/profile">Profile</a>
+    </nav>
+    
+</body>
+</html>
